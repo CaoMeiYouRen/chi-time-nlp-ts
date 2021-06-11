@@ -26,10 +26,7 @@ class TimeUnit {
         this.timeExpression = expTime
         this._tp = new TimePoint()
         this.timeBase = timeBase
-        this.isPreferFuture = false
-        if (isPreferFuture) {
-            this.isPreferFuture = isPreferFuture
-        }
+        this.isPreferFuture = isPreferFuture
         this._tpOrigin = new TimePoint(this.timeBase)
         this.isFirstTimeSolveContext = true
         this.isAllDayTime = true
@@ -48,9 +45,13 @@ class TimeUnit {
         if (this.isFirstTimeSolveContext && checkTimeIndex === 3 && this._tpOrigin.tunit[3] >= 12 && this._tp.tunit[3] < 12) {
             this._tp.tunit[3] += 12
         }
+        // 当已经是 下午X小时 时，不考虑未来时间的 上午X小时
         if (checkTimeIndex === 3 && this._tpOrigin.tunit[3] > this._tp.tunit[3]) {
-
             this._tp.tunit[3] += 12
+        }
+        if (this._tp.tunit[3] >= 24) {
+            this._tp.tunit[3] %= 24// 如果时间已经超过了24小时
+            this._tp.tunit[2] += 1
         }
         this.isFirstTimeSolveContext = false
     }
@@ -73,11 +74,11 @@ class TimeUnit {
         /** 2. 根据上下文补充时间 */
         this._checkContextTime(checkTimeIndex)
         // /** 3. 根据上下文补充时间后再次检查被检查的时间级别之前，是否没有更高级的已经确定的时间，如果有，则不进行倾向处理. */
-        // for (let i = 0; i < checkTimeIndex; i++) {
-        //     if (this._tp.tunit[i] !== -1) {
-        //         return
-        //     }
-        // }
+        for (let i = 0; i < checkTimeIndex; i++) {
+            if (this._tp.tunit[i] !== -1) {
+                return
+            }
+        }
         /** 4. 确认用户选项 */
         if (!this.isPreferFuture) {
             return
@@ -91,7 +92,6 @@ class TimeUnit {
         }
         // 准备增加的时间单位是被检查的时间的上一级，将上一级时间+1
         tp.tunit[checkTimeIndex - 1] += 1
-
         for (let i = 0; i < checkTimeIndex; i++) {
             this._tp.tunit[i] = tp.tunit[i]
             if (i === 1) {
@@ -809,7 +809,6 @@ class TimeUnit {
         } else {
             s += d.getSeconds()
         }
-
         this.timeBase = new Date(s)
     }
 
@@ -829,7 +828,7 @@ class TimeUnit {
         this.normSetMinute()
         this.normSetSecond()
         this.normSetTotal()
-        // this.modifyTimeBase();
+        // this.modifyTimeBase()
 
         this._tpOrigin.tunit = this._tp.tunit.concat()
 
