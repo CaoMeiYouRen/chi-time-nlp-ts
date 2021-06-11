@@ -320,7 +320,7 @@ class TimeUnit {
             /** 处理倾向于未来时间的情况   */
             this._preferFuture(3)
             this.isAllDayTime = false
-            return
+            
         }
     }
 
