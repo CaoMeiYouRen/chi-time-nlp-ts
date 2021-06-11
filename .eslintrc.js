@@ -11,6 +11,6 @@ module.exports = {
     plugins: [
     ],
     rules: {
-        'no-console': 0,
+        'no-prototype-builtins': 0,
     },
 }

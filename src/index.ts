@@ -1,12 +1,9 @@
-import { test } from './test'
 /**
- * say hello
- *
- * @author CaoMeiYouRen
- * @date 2020-11-28
- * @export
+ *Intro:
+ *Author:shine
+ *Date:2017/11/1
  */
-export function hello() {
-    console.log('hello'.toUpperCase())
-}
-export { test }
+import TimeNormalizer from './nlp/timeNormalizer'
+
+export { TimeNormalizer }
+export default TimeNormalizer

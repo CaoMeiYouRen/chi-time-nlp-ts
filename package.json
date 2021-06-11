@@ -1,13 +1,11 @@
 {
   "name": "chi-time-nlp-ts",
   "version": "0.1.0",
-  "description": "基于 semantic-release 的自动化 release rollup项目模板",
+  "description": "中文语句中的时间语义识别。即通过分析中文语句，识别出话语中提到的时间。",
   "author": "CaoMeiYouRen",
-  "private": true,
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "browser": "dist/index.browser.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -15,6 +13,14 @@
   "engines": {
     "node": ">=12"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaoMeiYouRen/chi-time-nlp-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CaoMeiYouRen/chi-time-nlp-ts/issues"
+  },
+  "homepage": "https://github.com/CaoMeiYouRen/chi-time-nlp-ts#readme",
   "scripts": {
     "lint": "cross-env NODE_ENV=production eslint src --fix --ext .ts,.js",
     "prebuild": "rimraf dist",
@@ -28,7 +34,8 @@
     "rm": "rimraf node_modules",
     "start": "node ./dist/index",
     "release": "semantic-release",
-    "commit": "git add . && git cz"
+    "commit": "git add . && git cz",
+    "test": "ts-node test/index.test.ts"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.16.1",

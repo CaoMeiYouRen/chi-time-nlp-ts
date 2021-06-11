@@ -90,21 +90,6 @@ export default [
         input: 'src/index.ts',
         external,
         output: {
-            file: 'dist/index.umd.js', // 生成 umd
-            format: 'umd',
-            name: outputName,
-            sourcemap: true,
-        },
-        plugins: getPlugins({
-            isBrowser: false,
-            isDeclaration: false,
-            isMin: true,
-        }),
-    },
-    {
-        input: 'src/index.ts',
-        external,
-        output: {
             file: 'dist/index.esm.js', // 生成 esm
             format: 'esm',
             name: outputName,
@@ -114,20 +99,6 @@ export default [
             isBrowser: false,
             isDeclaration: false,
             isMin: false,
-        }),
-    },
-    {
-        input: 'src/index.ts',
-        output: {
-            file: 'dist/index.browser.js', // 生成 browser
-            format: 'umd',
-            name: outputName,
-            sourcemap: true,
-        },
-        plugins: getPlugins({
-            isBrowser: true,
-            isDeclaration: false,
-            isMin: true,
         }),
     },
 ]
