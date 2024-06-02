@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import analyzer from 'rollup-plugin-analyzer'
+import dts from 'rollup-plugin-dts'
 import _ from 'lodash'
 import { dependencies, peerDependencies, name } from './package.json'
 const external = Object.keys({ ...dependencies, ...peerDependencies }) // 默认不打包 dependencies, peerDependencies
@@ -59,17 +60,13 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
 export default [
     {
         input: 'src/index.ts', // 生成类型文件
-        external,
         output: {
             dir: 'dist',
             format: 'esm',
             name: outputName,
+            // sourcemap: sourceMap,
         },
-        plugins: getPlugins({
-            isBrowser: false,
-            isDeclaration: true,
-            isMin: false,
-        }),
+        plugins: [dts()],
     },
     {
         input: 'src/index.ts',
