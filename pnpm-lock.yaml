@@ -113,8 +113,8 @@ devDependencies:
     specifier: ^10.0.0
     version: 10.9.2(@types/node@15.14.9)(typescript@4.9.5)
   ts-node-dev:
-    specifier: ^1.1.6
-    version: 1.1.8(typescript@4.9.5)
+    specifier: ^2.0.0
+    version: 2.0.0(@types/node@15.14.9)(typescript@4.9.5)
   typescript:
     specifier: ^4.3.2
     version: 4.9.5
@@ -1390,7 +1390,7 @@ packages:
     dev: true
 
   /@types/strip-json-comments@0.0.30:
-    resolution: {integrity: sha1-mqMMBNshKpoGSdaub9UKzMQHSKE=, tarball: https://registry.npmmirror.com/@types/strip-json-comments/download/@types/strip-json-comments-0.0.30.tgz}
+    resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
     dev: true
 
   /@types/unist@2.0.10:
@@ -6776,8 +6776,8 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /ts-node-dev@1.1.8(typescript@4.9.5):
-    resolution: {integrity: sha512-Q/m3vEwzYwLZKmV6/0VlFxcZzVV/xcgOt+Tx/VjaaRHyiBcFlV0541yrT09QjzzCxlDZ34OzKjrFAynlmtflEg==}
+  /ts-node-dev@2.0.0(@types/node@15.14.9)(typescript@4.9.5):
+    resolution: {integrity: sha512-ywMrhCfH6M75yftYvrvNarLEY+SUXtUvU8/0Z6llrHQVBx12GiFk5sStF8UdfE/yfzk9IAq7O5EEbTQsxlBI8w==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     peerDependencies:
@@ -6795,9 +6795,13 @@ packages:
       rimraf: 2.7.1
       source-map-support: 0.5.21
       tree-kill: 1.2.2
-      ts-node: 9.1.1(typescript@4.9.5)
+      ts-node: 10.9.2(@types/node@15.14.9)(typescript@4.9.5)
       tsconfig: 7.0.0
       typescript: 4.9.5
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/node'
     dev: true
 
   /ts-node@10.9.2(@types/node@15.14.9)(typescript@4.9.5):
@@ -6828,22 +6832,6 @@ packages:
       make-error: 1.3.6
       typescript: 4.9.5
       v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    dev: true
-
-  /ts-node@9.1.1(typescript@4.9.5):
-    resolution: {integrity: sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    peerDependencies:
-      typescript: '>=2.7'
-    dependencies:
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      source-map-support: 0.5.21
-      typescript: 4.9.5
       yn: 3.1.1
     dev: true
 
