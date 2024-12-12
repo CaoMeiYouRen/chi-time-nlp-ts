@@ -3,6 +3,9 @@
   <a href="https://www.npmjs.com/package/chi-time-nlp-ts" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/chi-time-nlp-ts.svg">
   </a>
+<a href="https://www.npmjs.com/package/chi-time-nlp-ts" target="_blank">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dt/chi-time-nlp-ts?label=npm%20downloads&color=yellow">
+  </a>
   <a href="https://github.com/CaoMeiYouRen/chi-time-nlp-ts/actions?query=workflow%3ARelease" target="_blank">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/CaoMeiYouRen/chi-time-nlp-ts/release.yml?branch=master">
   </a>
@@ -99,4 +102,4 @@ Copyright © 2024 [CaoMeiYouRen](https://github.com/CaoMeiYouRen).<br />
 This project is [MIT](https://github.com/CaoMeiYouRen/chi-time-nlp-ts/blob/master/LICENSE) licensed.
 
 ***
-_This README was generated with ❤️ by [cmyr-template-cli](https://github.com/CaoMeiYouRen/cmyr-template-cli)_
+_This README was generated with ❤️ by [chi-time-nlp-ts](https://github.com/CaoMeiYouRen/chi-time-nlp-ts)_
