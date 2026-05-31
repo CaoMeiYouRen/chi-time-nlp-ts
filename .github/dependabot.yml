@@ -17,6 +17,3 @@ updates:
       - dependency-name: "@commitlint/config-conventional"
         versions:
           - ">= 19.0.0"
-      - dependency-name: "eslint"
-        versions:
-          - ">= 9.0.0"
