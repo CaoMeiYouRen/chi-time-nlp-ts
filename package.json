@@ -47,10 +47,10 @@
     "@types/lodash": "^4.14.168",
     "@types/node": "^22.0.0",
     "commitizen": "^4.3.1",
-    "conventional-changelog-cli": "^5.0.0",
+    "commitlint": "^21.0.2",
+    "commitlint-config-cmyr": "^1.0.1",
     "conventional-changelog-cmyr-config": "^2.1.2",
     "cross-env": "^7.0.3",
-    "cz-conventional-changelog": "^3.3.0",
     "cz-conventional-changelog-cmyr": "^2.0.0",
     "dayjs": "^1.11.11",
     "debug": "^4.3.1",
@@ -69,8 +69,7 @@
     "ts-jest": "^29.4.11",
     "ts-node": "^10.0.0",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.4.5",
-    "validate-commit-msg": "^2.14.0"
+    "typescript": "^5.4.5"
   },
   "config": {
     "commitizen": {
@@ -83,7 +82,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "validate-commit-msg"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
