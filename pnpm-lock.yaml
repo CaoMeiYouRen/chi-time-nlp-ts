@@ -24,12 +24,6 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^12.1.0
         version: 12.3.0(rollup@2.80.0)(tslib@2.8.1)(typescript@5.4.5)
-      '@semantic-release/changelog':
-        specifier: ^6.0.3
-        version: 6.0.3(semantic-release@25.0.3(typescript@5.4.5))
-      '@semantic-release/git':
-        specifier: ^10.0.1
-        version: 10.0.1(semantic-release@25.0.3(typescript@5.4.5))
       '@types/debug':
         specifier: ^4.1.5
         version: 4.1.13
@@ -51,9 +45,6 @@ importers:
       commitlint-config-cmyr:
         specifier: ^1.0.1
         version: 1.0.1
-      conventional-changelog-cmyr-config:
-        specifier: ^2.1.2
-        version: 2.1.2
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -102,6 +93,9 @@ importers:
       semantic-release:
         specifier: ^25.0.3
         version: 25.0.3(typescript@5.4.5)
+      semantic-release-cmyr-config:
+        specifier: ^1.0.2
+        version: 1.0.2(semantic-release@25.0.3(typescript@5.4.5))
       ts-jest:
         specifier: ^29.4.11
         version: 29.4.11(@babel/core@7.29.7)(@jest/transform@30.4.1)(@jest/types@30.4.1)(babel-jest@30.4.1(@babel/core@7.29.7))(jest-util@30.4.1)(jest@30.4.2(@types/node@22.19.19)(ts-node@10.9.2(@types/node@22.19.19)(typescript@5.4.5)))(typescript@5.4.5)
@@ -1546,9 +1540,9 @@ packages:
     resolution: {integrity: sha512-6gfI3otXK5Ph5DfCOI1dblr+kN3FAm5a97hYoQkqNZxOaYa5WKfXH+AnpsmS+iUH2mgVC2Cg2Qw9m5OKcmNrIg==}
     engines: {node: '>=18'}
 
-  conventional-changelog-cmyr-config@2.1.2:
-    resolution: {integrity: sha512-JucNefNoVC1StkGTSKeFRZgOLOsXnmqd3CoaxoI1QPZ093slTdhQrt1doTARJKzvmL+4RL80LiSRneH1mdRSmw==}
-    engines: {node: '>=12'}
+  conventional-changelog-cmyr-config@3.0.0:
+    resolution: {integrity: sha512-QhD/0545XRgspCcopi2d5L8ffFdiqsaqqcQfGRprv18CVH0NUQUtfORpbNqEOWwl1VxYj1pZUcVyxHTSfam1Xg==}
+    engines: {node: '>=18'}
 
   conventional-changelog-conventionalcommits@9.3.1:
     resolution: {integrity: sha512-dTYtpIacRpcZgrvBYvBfArMmK2xvIpv2TaxM0/ZI5CBtNUzvF2x0t15HsbRABWprS6UPmvj+PzHVjSx4qAVKyw==}
@@ -3642,14 +3636,6 @@ packages:
   pure-rand@7.0.0:
     resolution: {integrity: sha512-P+yQSnu0T0M3g9Wlwq9ZBA3iOTQ/i4H/RnpSc9VvM1nCnQTs1lQpK/kAU5kHJoWn5Gv7310+mV63hwwWy+UUqg==}
 
-  q@1.5.1:
-    resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
-    engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
-    deprecated: |-
-      You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
-
-      (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
-
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
@@ -3842,6 +3828,12 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  semantic-release-cmyr-config@1.0.2:
+    resolution: {integrity: sha512-xMa4wMK88HuTc9ODdEsW38iDRmka4iGjCWSWCHdXBU3st+8h63xkmPhWCEBR8J8Kkstd/j4bLIV00Lm1T90bJw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      semantic-release: '>=24'
 
   semantic-release@25.0.3:
     resolution: {integrity: sha512-WRgl5GcypwramYX4HV+eQGzUbD7UUbljVmS+5G1uMwX/wLgYuJAxGeerXJDMO2xshng4+FXqCgyB5QfClV6WjA==}
@@ -6266,11 +6258,10 @@ snapshots:
     dependencies:
       compare-func: 2.0.0
 
-  conventional-changelog-cmyr-config@2.1.2:
+  conventional-changelog-cmyr-config@3.0.0:
     dependencies:
       compare-func: 2.0.0
       debug: 4.4.3
-      q: 1.5.1
     transitivePeerDependencies:
       - supports-color
 
@@ -8817,8 +8808,6 @@ snapshots:
 
   pure-rand@7.0.0: {}
 
-  q@1.5.1: {}
-
   randombytes@2.1.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -9085,6 +9074,16 @@ snapshots:
       is-regex: 1.2.1
 
   safer-buffer@2.1.2: {}
+
+  semantic-release-cmyr-config@1.0.2(semantic-release@25.0.3(typescript@5.4.5)):
+    dependencies:
+      '@semantic-release/changelog': 6.0.3(semantic-release@25.0.3(typescript@5.4.5))
+      '@semantic-release/git': 10.0.1(semantic-release@25.0.3(typescript@5.4.5))
+      conventional-changelog-cmyr-config: 3.0.0
+      conventional-changelog-writer: 8.4.0
+      semantic-release: 25.0.3(typescript@5.4.5)
+    transitivePeerDependencies:
+      - supports-color
 
   semantic-release@25.0.3(typescript@5.4.5):
     dependencies:

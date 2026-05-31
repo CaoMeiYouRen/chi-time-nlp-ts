@@ -7,7 +7,3 @@ updates:
       interval: monthly
       time: "04:00"
       timezone: Asia/Shanghai
-    ignore:
-      - dependency-name: semantic-release
-        versions:
-          - ">= 21.0.1"
