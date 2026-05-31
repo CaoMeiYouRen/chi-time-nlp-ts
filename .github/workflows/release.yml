@@ -3,6 +3,14 @@ on:
   push:
     branches:
       - master
+
+permissions:
+  id-token: write # Required for OIDC
+  packages: write
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   release:
     name: Release
@@ -20,23 +28,10 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "pnpm"
-      - name: Cache multiple paths
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.npm
-            ~/.yarn
-            ~/.cache/pnpm
-            ~/cache
-            !~/cache/exclude
-            **/node_modules
-          key: pnpm-${{ runner.os }}-${{ hashFiles('package.json') }}
-          restore-keys: pnpm-${{ runner.os }}
       - run: pnpm i --frozen-lockfile
       - run: pnpm run lint
       - run: pnpm run build
       - run: pnpm run test
       - env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm run release

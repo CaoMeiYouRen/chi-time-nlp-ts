@@ -1,13 +1,11 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable max-lines */
 /**
  *Intro:
  *Author:shine
  *Date:2017/11/1
  */
-import TimePoint from './timePoint'
 import timeEnum from '../enum'
 import util from '../util'
+import TimePoint from './timePoint'
 
 class TimeUnit {
     timeExpression: string

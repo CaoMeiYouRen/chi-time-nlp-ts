@@ -38,7 +38,7 @@ const util = {
     },
     reverseStr: (str: string) => str.split('').reverse().join(''),
     isLeapYear: (year: number) => {
-        if (year / 4 * 4 !== year) { // eslint-disable-line
+        if (year / 4 * 4 !== year) {
             return false
         }
         if (year / 100 * 100 !== year) {// eslint-disable-line
